@@ -19,7 +19,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 
 /**
- * @fullrss
+ * @rss_html
  */
 class Progorod62Parser extends MediasferaNewsParser implements ParserInterface
 {
