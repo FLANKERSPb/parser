@@ -16,6 +16,10 @@ use app\components\mediasfera\NewsPostWrapper;
 use app\components\parser\ParserInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
+
+/**
+ * @fullrss
+ */
 class ProufuParser extends MediasferaNewsParser implements ParserInterface
 {
     /*run*/
@@ -27,7 +31,12 @@ class ProufuParser extends MediasferaNewsParser implements ParserInterface
     public const SITE_URL = 'https://proufu.ru/';
     public const NEWSLIST_URL = 'https://proufu.ru/rss.php';
 
-//    public const TIMEZONE = '+0500';
+    public const CURL_OPTIONS = [
+        CURLOPT_HEADER => true,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'
+    ];
+
     public const DATEFORMAT = 'D, d M Y H:i:s O';
 
     public const NEWSLIST_POST = '//channel/item';
